@@ -1,16 +1,10 @@
-# Security Architecture
+# Security & Chain of Custody
 
-## 1. Physical & Digital Chain of Custody
-The core security primitive of the platform is proving that a specific item was handed from Person A to Person B without tampering.
+## 1. Above-Ground TOTP Handshakes
+We have scrapped the offline Bluetooth Low Energy (BLE) mesh network due to extreme engineering complexity and Android fragmentation.
+- **Mandatory 4G/5G Handshakes:** All physical handovers must occur above ground (e.g., outside Tube station entrances) where standard internet connectivity is available.
+- **The Protocol:** Sender and Courier scan each other's dynamic TOTP QR codes via our standard HTTPS REST API, guaranteeing real-time GPS validation at the exact moment of handover.
 
-### The Double-QR Handshake
-To prevent "I never received it" or "He never picked it up" fraud:
-1. Both apps exchange dynamically generated QR codes at pickup and dropoff.
-
-## 2. Identity Verification & Anti-Fraud
-- **Onfido/Checkr Integration:** All couriers pass ID verification.
-- **Biometric Liveness (The Deepfake Threat):** High-value pickups require a real-time "Face Match". The threat model here focuses on *Injection Attacks* (virtual cameras bypassing the OS). Our provider must maintain **iBeta Level 2 Presentation Attack Detection (PAD)** certification.
-
-## 3. Application Security
-- **Dynamic QR Codes (TOTP):** The QR codes contain Time-based One-Time Passwords.
-- **Offline Handshake:** In low-signal areas (e.g., London Underground), the apps exchange cryptographically signed JWTs via Bluetooth LE.
+## 2. Theft Deterrence
+- **Earn Your Stake:** To overcome the onboarding friction of the £50 Collateralized Stake, new couriers are restricted to low-value items (<£10). Their earnings are withheld until they reach the £50 collateral threshold, at which point they unlock high-value deliveries.
+- **Tamper-Evident Packaging:** Standardized, sealed bags prevent opportunistic snooping.

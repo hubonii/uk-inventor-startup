@@ -1,20 +1,14 @@
-# UK Legal & Regulatory Strategy
+# Legal & Regulatory Considerations (UK)
 
-## 1. Gig Economy & Employment Law
-**Core Challenge:** The Supreme Court ruling (*Uber BV v Aslam [2021] UKSC 5*) established that Uber drivers are "workers". The Court applied the principle of "substance over form" (*Autoclenz Ltd v Belcher*), emphasizing the **degree of control** Uber exercised (fixing fares, unnegotiable terms, performance ratings, and logging out drivers who declined rides).
+## 1. Employment Law: Escaping *Uber v Aslam*
+The Supreme Court ruling in *Uber BV v Aslam* established that algorithmic control over pricing and penalties constitutes "worker status". 
+**Our Defense:** We operate a **True Marketplace**. 
+- Couriers set their own minimum rates via an in-app slider.
+- We do not penalize for rejecting packages.
+- By relinquishing price control, we operate purely as a software intermediary (SaaS), defeating the worker classification threat.
 
-**Our Defense (The "Commuter-Share" Model):**
-- **No Dispatch/Assignment:** We strictly match intent.
-- **No Penalties for Refusal:** Directly neutralizing the Supreme Court's "control" test, couriers are never penalized, down-ranked, or logged out for ignoring matches.
-- **Inability to Make a Living:** Payouts are "expense contributions", structurally preventing the platform from acting as an employer.
-
-## 2. Criminal Liability & Contraband
-**Core Challenge:** Couriers transporting illegal goods could lead to platform liability.
-
-**Our Defense (Digital Chain of Custody & Safe Harbor):**
-- Under the *Electronic Commerce (EC Directive) Regulations 2002*, we rely on the **Hosting Exemption**. We are not liable as long as we do not have "actual knowledge" of illegal goods.
-- **Notice and Takedown:** We maintain strict incident reporting. Once reported, we ban the sender immediately to preserve Safe Harbor.
-- **Online Safety Act (OSA) 2023 Compliance:** Because we do not take an active, editorial role in curating the goods shipped, we minimize the "duty of care" exposure compared to active promoters.
-
-## 3. Insurance & Liability
-- **Micro-Insurance:** Every package requires micro-insurance to cover loss. We act as an intermediary broker.
+## 2. Insurance & Liability (Collateralized Staking)
+We cannot subsidize micro-insurance for unvetted couriers. We instead use **Collateralized Staking**:
+- Couriers must maintain a £50 "Security Deposit" in their wallet to accept high-value deliveries.
+- If a package is stolen, the platform slashes the stake to refund the sender.
+- **FCA Compliance:** To avoid holding user funds as an e-money institution, the stake is managed via a pre-authorized credit card hold (Stripe Issuing/Hold) rather than a cash wallet.

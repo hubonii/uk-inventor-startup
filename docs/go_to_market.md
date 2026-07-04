@@ -1,20 +1,16 @@
-# Go-To-Market (GTM) Strategy
+# Go-To-Market Strategy
 
-## The Challenge: Geographic Liquidity
-Hyper-local marketplaces die if supply and demand don't intersect spatially and temporally. A sender in Brixton and a courier in Camden are useless to each other. 
+## 1. The B2B Local Independent Pivot
+We are shifting focus away from high-end D2C Shopify brands. Boutique brands demand absolute reliability and will not entrust £150 items to crowdsourced students in sweatpants.
 
-## Phase 1: The Wedge (University Campuses)
-**Target:** UCL (University College London) and surrounding dorms.
-**Why:**
-- **Density:** ~25% of UCL students are classified as "commuter students" (traveling from Zone 3+ or >45 mins). This provides mathematically robust supply density.
-- **Tactic:** Subsidize the network. Offer free deliveries to the first 500 senders, and guarantee a £5 payout to student couriers to prime the pump.
+## 2. Target Demographic: High-Volume Local Commerce
+We are targeting **Local Independent High-Street Shops**:
+- **Pharmacies:** Same-day local prescription drops.
+- **Independent Hardware Stores:** Instant delivery of tools/parts to local builders.
+- **Print Shops:** Same-day delivery of marketing materials to local offices.
+- **Why?** These businesses prioritize ultra-cheap, instant, same-day dispatch over premium "white-glove" branding.
 
-## The Vinted Integration Blocker
-**Critical Risk:** Vinted *forces* sellers to use integrated, pre-paid labels (Evri/InPost). They do this because the seller's payment release is tied automatically to the courier's real-time tracking API.
-**The Pivot:** We cannot rely on Vinted sellers to "manually fulfill" orders, because doing so risks their payment. 
-**New Demand Strategy:**
-1. **Direct C2C / Local Social:** Target Facebook Marketplace, Gumtree, and local WhatsApp community groups where shipping is negotiated directly between buyer and seller.
-2. **Independent D2C Brands:** Build an official Shopify plugin so independent retailers can offer our service at checkout without integration friction.
-
-## Phase 2: Zone 1 & Zone 2 London Expansion
-Once density is established, we onboard independent local retailers via the B2B dashboard.
+## 3. The "University Wedge" Density Plan
+- Deploy B2B field sales teams around the UCL / Bloomsbury wedge.
+- Onboard 15 local pharmacies and print shops within a 1-mile radius.
+- Deploy paid "Anchor Couriers" exclusively in this 1-mile radius to guarantee SLAs for these early B2B clients until organic P2P student density takes over.

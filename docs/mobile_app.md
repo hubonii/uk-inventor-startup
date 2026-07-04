@@ -1,18 +1,12 @@
-# Mobile Application Architecture
+# Mobile App Architecture & UX
 
-## 1. Technology Stack
-- **Framework:** React Native (Expo).
-- **QR Generation:** We use `react-native-nitro-totp` combined with `react-native-qrcode-svg` to generate the secure 30-second TOTP handshakes.
+## 1. Courier App Additions
+- **Pricing Slider:** A UI component allowing couriers to set their "Minimum Rate per Mile" (e.g., £2.50 to £10.00).
+- **Staking Dashboard:** UI showing their current "Withheld Stake" progression towards the £50 high-value unlock.
 
-## 2. Core Constraints & Mitigations
+## 2. Sender App Additions
+- **Aggregated Billing UI:** Consumers see an "Accumulated Weekly Bill" rather than being charged per drop.
+- **B2B Portal:** Pharmacies and local shops get a web dashboard (or tablet app) to dispatch bulk drops (e.g., 5 prescriptions to 5 different addresses) using the "Anchor Courier" network.
 
-### Background Location Tracking (App Store Policy)
-- **The Threat:** Apple strictly rejects apps tracking background location without direct, immediate user value (e.g., fitness tracking).
-- **The Mitigation:** We cannot use high-frequency background GPS. We must rely on `startMonitoringSignificantLocationChanges` and clearly justify the "Sender Peace of Mind" in our permission purpose strings.
-
-### Offline Bluetooth (BLE) Handshake
-- **The Threat:** Budget Android OS skins aggressively kill background BLE processes, causing GATT errors (Status 133).
-- **The Mitigation:** We must run the BLE listener as a Foreground Service with a persistent notification. Additionally, all GATT operations must run through a serialized queue, as parallelizing them breaks the Android Bluetooth stack.
-
-## 3. Camera Sandbox
-- A custom UI built over `expo-camera` intercepts the base64 image data and sends it directly to the API, bypassing the camera roll to ensure Sender privacy.
+## 3. Simplification
+- The offline BLE bridging libraries have been removed from the React Native build, drastically reducing app size, battery drain, and background permission requirements.

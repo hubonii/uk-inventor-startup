@@ -1,13 +1,18 @@
 # Business Model
 
-## Overview
-Our business model is a multi-sided peer-to-peer marketplace connecting regular commuters (supply) with local e-commerce sellers and individuals needing rapid, cheap local delivery (demand).
+## 1. Value Proposition
+Commuter-Share provides ultra-fast, zero-emission local delivery for independent high-street businesses (pharmacies, hardware, print shops) and consumers. We leverage a hybrid fleet of geofenced "Anchor Couriers" (students) and organic P2P gig-workers to move packages across dense urban nodes.
 
-## Revenue Streams
-1. **Transaction Fees:** We charge the Sender a flat fee for the delivery (e.g. £5.00). The majority is passed to the Courier. We retain a platform margin.
-2. **Micro-Insurance Premiums:** Senders pay an additional premium for the Gold Tier to insure high-value items. We act as the broker.
-3. **B2B API Integrations:** Charging local retailers a monthly subscription for bulk-upload tools and priority matching.
+## 2. The Hybrid Liquidity Model
+To solve the cold-start problem of purely crowdsourced P2P delivery, we deploy a **Geofenced Anchor Strategy**:
+- **Anchor Couriers:** Paid shifts deployed within a strict 1-mile radius (e.g., UCL Campus) for the first 90 days of a node's launch. This guarantees baseline liquidity and SLAs.
+- **Organic P2P Transition:** Once organic P2P courier density reaches 500 active users in that wedge, Anchor Couriers are phased out entirely in favor of true P2P.
 
-## Threats to the Business Model
-- **Stripe Micro-transaction Margin Destruction:** Standard Stripe UK fees are 1.5% + £0.20. On a £5.00 transaction, the 20p fixed fee destroys 20% of our £1.00 net margin. We must negotiate a custom micro-transaction pricing tier via Stripe Connect Sales.
-- **Platform Leakage (Disintermediation):** As seen in the failure of TaskRabbit's early delivery model, if a local retailer finds a reliable courier, they often take the relationship off-app to avoid our £1.00 fee. We must offer strong intrinsic value (Insurance, automated dispatch tools) to keep B2B users on the platform.
+## 3. True Marketplace Pricing (The Legal Shield)
+To completely insulate the platform from *Uber v Aslam* "worker misclassification", we act strictly as a software intermediary:
+- **Courier-Set Pricing:** Couriers set their own "Minimum Acceptable Rate per Mile" in the app.
+- **Dynamic Matching:** The algorithm matches sender budgets to courier minimums. We do not dictate the price, solidifying the independent contractor defense.
+
+## 4. Revenue Streams
+- **Sender SaaS/Platform Fee:** A 15% platform fee added to the courier's requested rate.
+- **B2B Monthly Invoicing:** Frequent senders (pharmacies) pay a monthly subscription (£49/mo) for discounted platform fees and aggregated billing.
