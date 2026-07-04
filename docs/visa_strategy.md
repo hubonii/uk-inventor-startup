@@ -1,20 +1,23 @@
 # UK Innovator Founder Visa Strategy
 
-## 1. Endorsing Bodies
-We must secure endorsement from an official UK Home Office Endorsing Body. The primary targets for our sector (Green Tech / B2B SaaS / Logistics) are:
-- **Innovator International**
-- **Envestors Limited**
-- **UK Endorsement Services (UKES)**
+## 1. The Core Threat: "Just Another Delivery App"
+The UK Home Office and approved Endorsing Bodies routinely reject standard marketplaces and local delivery apps. They view them as commoditized "local services" rather than genuine tech innovations. To secure endorsement, we must distance ourselves entirely from the identity of a "Courier Company".
 
-## 2. Evaluation Criteria (The "Marketplace" Hurdle)
-Endorsing bodies evaluate against three strict criteria: Innovation, Viability, and Scalability. Standard marketplaces (e.g., "another Uber for X") are routinely rejected.
+## 2. Our Official Pitch: The "Decoupled Logistics Protocol"
+We are not a delivery network. We are a **B2B SaaS Trust Infrastructure** company.
+- **The Problem:** Local merchants cannot afford DPD/Royal Mail for instant local drops, and they cannot trust unvetted local gig-workers because of theft and lack of accountability.
+- **The Innovation:** We have built a proprietary **Cryptographic Chain-of-Custody Protocol**. By combining dynamic TOTP handshakes with smart-contract style "Collateralized Staking", our software mathematically guarantees the safety of physical goods without needing to employ or background-check the courier.
 
-### Innovation
-- **What we must prove:** We are not algorithmically dispatching drivers. Our proprietary PostGIS "intent-matching" engine represents a fundamental shift in logistics algorithms. We must emphasize the zero net-new-emissions environmental angle.
+## 3. Addressing the Three Pillars of Endorsement
 
-### Scalability
-- **What we must prove:** The platform has global potential and robust unit economics. We must demonstrate that our Customer Acquisition Cost (CAC) vs Lifetime Value (LTV) is viable, and that our cloud infrastructure (PostgreSQL/Node) allows us to onboard 100,000 users without a linear increase in headcount.
+### A. Innovation
+- **What to say:** "We have decoupled trust from employment. Unlike Lalamove or Deliveroo, who rely on massive operational hiring and background checks, our software uses cryptographic staging and financial staking to allow zero-trust, permissionless physical delivery."
+- **What to avoid:** Do not mention "matching algorithms" or "finding couriers". Do not mention "Anchor Couriers". Focus entirely on the B2B software layer.
 
-## 3. Deliverables Required for Endorsement
-- A watertight Business Plan highlighting the PostGIS tech stack.
-- A financial model proving the £3-£5 commuter payout is mathematically sound given Stripe/Onfido API costs.
+### B. Viability
+- **What to say:** "Our business is extremely viable because it is highly asset-light. We do not pay couriers, we do not subsidize deliveries, and we do not carry logistics insurance. We charge local independent businesses a £49/mo SaaS fee to access our Trust Protocol."
+- **What to avoid:** Do not discuss the difficulties of acquiring couriers or the £50 staking friction. Emphasize that merchants bring their own local gig-workers or use our open network.
+
+### C. Scalability
+- **What to say:** "As a pure software protocol, our marginal cost of expansion is near zero. Once the platform is built, a pharmacy in London and a print shop in Berlin can adopt the software simultaneously without us needing to establish local operational hubs."
+- **What to avoid:** Do not mention that the walking/cycling model only works in dense university nodes.
