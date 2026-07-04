@@ -1,17 +1,13 @@
 # Market Analysis
 
 ## 1. Total Addressable Market (TAM)
-- **Global Last-Mile Delivery Market:** Projected to reach $200B+ by 2030.
-- **UK Market:** The UK is the most developed e-commerce market in Europe. Over 4 billion parcels are delivered annually in the UK.
+- **UK Market:** The UK handles about 13.7 million parcels daily. 
+- **London Focus:** London accounts for approximately 22% of all UK courier destinations, equating to roughly **3 million parcels per day** across Greater London.
 
-## 2. Serviceable Addressable Market (SAM)
-- **London Same-Day / Hyper-local Delivery:** London handles roughly 1.5 million parcels per day. The demand for same-day delivery is growing at 20% YoY, driven by expectations set by Amazon Prime.
+## 2. Market Dynamics: The C2C Shift
+- The "second-hand boom" driven by Vinted and Depop has severely fragmented deliveries. C2C volumes are growing at 20x the rate of traditional retail.
+- Because C2C creates millions of isolated "micro-supply chains" (individuals shipping to individuals), it is highly inefficient for Zones 1 and 2, forcing traditional carriers (Evri) to pivot to Out-Of-Home (OOH) lockers. Our point-to-point commuter model bypasses this bottleneck entirely.
 
-## 3. Serviceable Obtainable Market (SOM)
-- **Peer-to-Peer / C2C / SME Niche:** Targeting the specific slice of Vinted, Depop, eBay sellers, and local independent shops in London who cannot afford £10-£15 same-day courier rates. Estimated at 50,000 deliveries per day.
-
-## 4. Market Tailwinds
-- **Environmental ESG Mandates:** The Mayor of London is aggressively expanding ULEZ (Ultra Low Emission Zones). Traditional delivery vans are becoming prohibitively expensive to operate. Our "zero net new emissions" model (utilizing existing Tube journeys) aligns perfectly with government grants and consumer sentiment.
-
-## 📝 Remaining Unknowns (TODOs)
-- **Regulatory Subsidies:** Research specific Transport for London (TfL) or Innovate UK grants available for carbon-neutral logistics startups.
+## 3. Market Tailwinds (ESG)
+- **Zero Net-New Emissions:** Our model utilizes existing Tube and bus journeys.
+- **Funding Opportunities:** The startup is strategically aligned with the **Innovate UK Freight Innovation Fund** (aimed at SMEs in green tech) and borough-level funding via the **Mayor’s Air Quality Fund (MAQF)**.

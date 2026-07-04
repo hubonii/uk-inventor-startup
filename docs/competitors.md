@@ -1,19 +1,11 @@
 # Competitor Analysis
 
-## 1. Traditional Couriers (Royal Mail, Evri, DPD)
-- **Their Model:** Hub-and-spoke. A driver picks up packages, drives to a warehouse out of town, sorts them, and drives them back the next day.
-- **Their Weakness:** Expensive for same-day (£10-£15). High carbon emissions.
-- **Our Moat:** Point-to-point. The package never goes to a warehouse. £4-£6 same day. Zero net new carbon emissions.
+## 1. Traditional Couriers (Evri, Royal Mail)
+- **Pricing Context:** On Vinted, buyers pay ~£2.29-£2.49 for standard Evri parcels. However, true "Same-Day" delivery commands a massive premium (historically £6.50-£7.50 for retail, and £20+ for dedicated on-demand couriers like Gophr or Addison Lee).
+- **Our Moat:** We offer Same-Day delivery (£4-£6) at prices closer to Next-Day delivery. Zero net new carbon emissions.
 
-## 2. On-Demand Gig Apps (Stuart, Deliveroo, Uber Connect)
-- **Their Model:** Algorithmically dispatch a full-time gig worker on a moped to go out of their way to pick up an item.
-- **Their Weakness:** They have to pay the worker for the *entire* trip, plus dead-heading (the time taken to drive to the pickup). This makes it expensive. Vulnerable to worker reclassification lawsuits.
-- **Our Moat:** The courier is already making the journey. We only pay them for the marginal deviation (the 5 minutes to walk to the pickup/dropoff). Immune to worker reclassification because it is genuine expense sharing.
-
-## 3. Existing P2P Delivery Attempts (e.g., Nimber)
-- **Their Model:** Tried to do what we are doing, but focused on long-distance (inter-city) or failed to build hyper-local density.
-- **Their Weakness:** No density meant the matching algorithm failed. Users opened the app, saw nothing, and never came back.
-- **Our Moat:** The "University Campus" wedge. We force density in a 2-mile radius before expanding.
-
-## 📝 Remaining Unknowns (TODOs)
-- **Vinted Integration:** Investigate if Vinted's API allows third-party shipping providers, which would instantly crush the traditional couriers for C2C sales.
+## 2. Failed Peer-to-Peer Models (Nimber, TaskRabbit)
+We must learn from the post-mortems of early gig-logistics platforms:
+- **The Auction Trap (TaskRabbit):** TaskRabbit initially used a bidding model, creating massive friction. We avoid this by using fixed algorithms (£3-£5).
+- **Geographic Liquidity (Nimber):** Nimber failed to build hyper-local density, spreading too thin across the country. We combat this via our hyper-local "University Wedge" strategy.
+- **Trust & Liability:** Early platforms couldn't subsidize the insurance required for users to trust strangers. We solve this with the mandatory Tamper-Evident bag and Double-QR cryptographic chain of custody.
