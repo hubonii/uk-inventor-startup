@@ -1,30 +1,24 @@
 # Technical Architecture
 
-## 🏗️ High-Level Architecture
-Given the need for live GPS tracking, biometric integrations, and real-time state changes, the architecture must be highly concurrent and real-time capable.
+## 1. Core Stack
+- **Client (Mobile):** React Native (Expo) - allows rapid deployment to both iOS and Android with a shared codebase.
+- **Client (Web):** Next.js / React (for the B2B Retailer Dashboard).
+- **Backend API:** Node.js (Express or NestJS) / TypeScript - highly scalable for concurrent WebSocket connections.
+- **Database:** PostgreSQL with PostGIS extension - critical for the heavy geospatial matching algorithms.
+- **Cloud Infrastructure:** Google Cloud Platform (Cloud Run for API, Cloud SQL for PostgreSQL).
 
-### Frontend
-- **Mobile App:** React Native or Flutter for cross-platform deployment.
-- **Web Dashboard:** React/Next.js for admin operations and business senders.
+## 2. Geospatial Matching Engine (PostGIS)
+The core IP. Instead of pushing tasks to couriers, the engine relies on PostGIS spatial queries to match a package's (Origin A -> Destination B) with a courier's declared intent (Starting Point X -> Ending Point Y).
+- Must calculate intersecting vectors and walking distance deviations in under 50ms.
 
-### Backend
-- **API Layer:** Node.js (Express/NestJS) or Go (for high-concurrency websocket connections).
-- **Real-time Engine:** WebSockets or Server-Sent Events (SSE) for live GPS updates and chat.
+## 3. Real-Time Tracking
+- **Protocol:** WebSockets (Socket.io or raw ws).
+- **Architecture:** Couriers push GPS coordinates every 10 seconds. Senders receive updates over the socket connection. Redis Pub/Sub used to scale WebSocket instances.
 
-### Infrastructure (AWS / GCP)
-- **Database:** PostgreSQL for relational data (users, orders, financial ledgers).
-- **Geospatial Queries:** PostGIS extension for matching commuter routes with package locations.
-- **Object Storage:** Amazon S3 / Google Cloud Storage for storing biometric photos, package photos, and ID documents (must be encrypted at rest).
+## 4. Third-Party Integrations
+- **Payments:** Stripe Connect (handles holding sender funds in escrow and routing payouts to couriers).
+- **Identity & Biometrics:** Onfido API (KYC and Liveness checks).
+- **Maps/Routing:** Mapbox API or Google Maps Platform.
 
-### Third-Party Integrations
-- **Identity & Background:** Onfido or Checkr (KYC, DBS, Liveness).
-- **Payments:** Stripe Connect.
-- **Mapping & Routing:** Google Maps API or Mapbox.
-
-## 📝 TODO: Critical Unknowns
-- [ ] Evaluate the latency of PostGIS for live routing vs using a dedicated geospatial engine like Redis GEO.
-- [ ] Define the exact encryption standards for storing package photos to comply with GDPR.
-
-## 🔗 Related Documents
-- [System Design](system_design.md)
-- [Database Design](database_design.md)
+## 📝 Remaining Unknowns (TODOs)
+- **Battery Drain:** Determine the exact battery drain on the Courier's phone when pushing GPS via WebSockets for 45 minutes.

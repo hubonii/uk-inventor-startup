@@ -1,20 +1,26 @@
-# Security Protocols
+# Security Architecture
 
-## 🛡️ Courier Onboarding Security
-- **DBS API Integration:** Automated background checks for unspent criminal convictions.
-- **Identity:** Cross-referencing Passport/Driving License with National Insurance Numbers to prevent synthetic identities.
+## 1. Physical & Digital Chain of Custody
+The core security primitive of the platform is proving that a specific item was handed from Person A to Person B without tampering.
 
-## 📦 Anti-Theft & Chain of Custody
-1. **The Tamper-Evident Bag:** A physical barrier. Once sealed, it cannot be opened without leaving visible damage.
-2. **The Visual Record:** A photo uploaded to our servers proves the state of the item *before* it was sealed.
-3. **Double Cryptographic Handshake:** The pickup and drop-off are verified by scanning dynamic QR codes generated on the client's phone. A screenshot of a QR code will not work (time-based regeneration).
+### The Tamper-Evident Bag
+- Senders must place items inside physical, transparent, tamper-evident bags (sold at local shops or mailed to power-users).
+- The bag has a unique physical barcode/QR code printed on it.
 
-## 🛑 Geofencing Anti-Hoarding
-To prevent a courier from accepting a package and holding it hostage:
-- The app monitors GPS ping frequency.
-- If the courier deviates significantly from the stated intent-route, or stops at a residential address for an extended period, an automated warning is sent.
-- If ignored, the sender is notified and the courier's account is suspended.
+### The Double-QR Handshake
+To prevent "I never received it" or "He never picked it up" fraud:
+1. **Pickup:** Sender generates a dynamic QR code on their screen. Courier scans it with their app. Courier generates a dynamic QR code on *their* screen. Sender scans it. Both apps report the cryptographic exchange to the backend.
+2. **Drop-off:** Recipient generates a dynamic QR. Courier scans it. Courier generates a dynamic QR. Recipient scans it. Handover complete.
 
-## 📝 TODO: Technical Security
-- [ ] Define the exact cryptographic rotation speed for the QR codes.
-- [ ] Architecture review: How do we prevent spoofed GPS locations (mock location apps on Android)?
+## 2. Identity Verification & Anti-Fraud
+- **Onfido/Checkr Integration:** All couriers must pass a strict ID check (Passport/Driver's License) against global watchlists.
+- **Biometric Liveness:** High-value package pickups require a real-time "Face Match" scan by the courier immediately before scanning the QR code, proving the registered courier is physically the one taking the package, not a friend borrowing their account.
+
+## 3. Application Security
+- **Dynamic QR Codes (TOTP):** The QR codes used in the handshake contain Time-based One-Time Passwords (valid for 30 seconds) to prevent screenshot-replay attacks.
+- **GPS Spoofing Prevention:** The mobile app implements anti-spoofing checks (e.g., detecting mock locations on Android, analyzing Wi-Fi/Cellular triangulation drift vs GPS).
+- **Offline Handshake:** In low-signal areas (e.g., London Underground), the apps exchange cryptographically signed JWTs via Bluetooth LE, which are synced to the backend once a connection is restored.
+
+## 📝 Remaining Unknowns (TODOs)
+- **Bluetooth Offline Sync:** Technical validation of Bluetooth LE reliability across fragmented Android devices.
+- **Bag Supply Chain:** Sourcing a manufacturer for custom tamper-evident bags with serialized barcodes.

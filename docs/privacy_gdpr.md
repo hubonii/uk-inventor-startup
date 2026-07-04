@@ -1,26 +1,24 @@
 # Privacy & GDPR Compliance
 
-Operating in the UK requires strict adherence to the UK GDPR and the Data Protection Act 2018.
+## 1. Data Protection Impact Assessment (DPIA)
+Given the platform's processing of biometric data (facial scans for Liveness checks) and real-time geolocation, a DPIA is legally mandated under UK GDPR Article 35.
 
-## 📡 Live Tracking & Geofencing
-- **The Issue:** Tracking a user's location continuously is highly sensitive.
-- **Compliance Strategy:** 
-  - Location tracking must *only* activate when the courier explicitly taps "Start Journey".
-  - It must automatically terminate the second the delivery is completed or canceled.
-  - Historical route data must be anonymized within 24 hours unless needed for an active dispute.
+## 2. Article 6 & Article 9 Legal Basis
+- **Standard PII (Name, Email):** Article 6(1)(b) - Processing necessary for the performance of a contract.
+- **Geolocation (GPS Tracking):** Article 6(1)(f) - Legitimate interests (ensuring the safety of the package and providing the sender with peace of mind). GPS tracking only activates when the courier has physical possession of a package.
+- **Biometric Data (Face Match):** Article 9(2)(a) - Explicit consent. Used exclusively for anti-fraud and identity verification.
 
-## 👁️ Biometrics & Facial Recognition
-- **The Issue:** Biometric data is "Special Category Data" under Article 9 of GDPR. Processing it requires explicit, unambiguous consent.
-- **Compliance Strategy:**
-  - The Liveness detection API (e.g., Onfido) must not store the biometric templates long-term.
-  - We must provide a clear Privacy Notice explaining exactly why liveness checks are required (fraud prevention & client safety).
+## 3. Data Retention Schedule
+To avoid ICO fines for data hoarding, the following automated purging schedule is enforced:
+- **Biometric Scans (Liveness):** Deleted immediately upon successful match verification. (We store the Boolean result, not the photo).
+- **Package Photos (Visual Manifest):** Encrypted at rest. Deleted 30 days after successful delivery confirmation, unless a dispute is raised.
+- **GPS Telemetry:** Aggregated and anonymized after 7 days. Raw tracking data deleted after 30 days.
+- **Account Deletion:** All user PII hard-deleted within 14 days of account closure request.
 
-## 📸 Photos of Package Contents
-- **The Issue:** Photographing a sender's personal items could inadvertently capture sensitive information (e.g., an address label, medical items).
-- **Compliance Strategy:**
-  - Photos taken through the app must NOT be saved to the courier's personal camera roll (sandbox the camera module).
-  - Photos must be encrypted in transit and at rest, and purged automatically 30 days after a successful delivery, assuming no disputes are raised.
+## 4. Privacy by Design Features
+- **Camera Sandbox:** When users take a photo of the package, the app uses a sandboxed camera view. The photo is *never* saved to the user's local iOS/Android camera roll.
+- **Phone Number Masking:** Senders and Couriers communicate via in-app VoIP or Twilio masked numbers. Real phone numbers are never exchanged.
 
-## 📝 TODO: Compliance Actions
-- [ ] Draft a Data Protection Impact Assessment (DPIA), which is legally required for processing biometric data.
-- [ ] Appoint a Data Protection Officer (DPO) or an external consultant.
+## 📝 Remaining Unknowns (TODOs)
+- **Data Subject Access Requests (DSAR):** Automate the JSON export functionality for users requesting their data.
+- **Third-Party Audits:** Select an independent GDPR auditor to review our DPIA prior to the public beta.

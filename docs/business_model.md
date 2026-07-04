@@ -1,33 +1,17 @@
 # Business Model
 
-## 💸 Revenue Streams
+## Overview
+Our business model is a multi-sided peer-to-peer marketplace connecting regular commuters (supply) with local e-commerce sellers and individuals needing rapid, cheap local delivery (demand).
 
-### 1. Delivery Transaction Fees
-A percentage or fixed fee taken from every successful delivery transaction. Given the low-cost nature of the delivery (£3-£5), transaction volume is the primary driver.
+## Revenue Streams
+1. **Transaction Fees:** We charge the Sender a flat fee for the delivery. The majority of this fee is passed directly to the Courier. We retain a platform margin (e.g., £1.00 per delivery).
+2. **Micro-Insurance Premiums:** Senders pay an additional premium (e.g., £0.50) for the Gold Tier to insure high-value items against loss or damage. We act as the broker, taking a percentage of the premium.
+3. **B2B API Integrations (Future):** Charging local Shopify/Vinted power-sellers a monthly subscription for bulk-upload tools, priority matching, and dedicated account management.
 
-### 2. Micro-Insurance Premiums
-Optional upsells for higher-tier insurance coverage on valuable packages, integrated dynamically at checkout.
+## Value Exchange
+- **Sender:** Gets a package delivered across the city on the same day for £4-£6 (cheaper and faster than Evri/Royal Mail).
+- **Courier:** Earns £3-£5 simply for taking a package on a train they were already going to catch, subsidizing their commute cost.
+- **Platform:** Extracts a £1 margin per transaction with zero physical assets, zero vehicles, and zero full-time drivers.
 
-### 3. Premium Packaging Sales (Potential)
-Selling branded, tamper-evident transparent bags to frequent senders/businesses.
-
-## ⚖️ Courier Economics
-
-### The £3-£5 Challenge
-If payouts are small, couriers need volume to make it worthwhile.
-- **Batching:** The algorithm must prioritize allowing couriers to carry multiple packages heading to the exact same destination or along the direct route.
-- **Incentive:** The primary incentive is that the journey was happening anyway (sunk cost of commute), making the payout purely additive.
-
-## 🥇 Tiering System
-- **Standard Tier:** New couriers. Limited to low-value, everyday items.
-- **Gold Tier:** Flawless delivery history required. Unlocks access to high-value items (luxury goods, electronics) which carry higher delivery payouts and stricter insurance requirements.
-
-## 📝 TODO: Critical Unknowns
-- [ ] Determine the exact platform take-rate (%) vs courier payout.
-- [ ] Model the batching economics (how many packages can an average commuter carry?).
-- [ ] Source insurance partners willing to underwrite P2P gig-economy deliveries.
-
-## 🔗 Related Documents
-- [Unit Economics](unit_economics.md)
-- [Pricing](pricing.md)
-- [Go-To-Market](go_to_market.md)
+## 📝 Remaining Unknowns (TODOs)
+- **Stripe Fee Feasibility:** If Stripe takes £0.20 + 1.4% on a £5 transaction, our platform take of £1.00 shrinks by ~30%. We must model high-volume payment processor discounts.

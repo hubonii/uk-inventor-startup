@@ -1,24 +1,16 @@
-# Core Features List
+# Feature Specification
 
-## 1. Intent-Based Routing Engine
-- Allows couriers to set destination and transport mode.
-- Filters available packages geographically.
+## Feature 1: The Camera Sandbox
+- **Description:** A custom camera view that intercepts the image buffer.
+- **Why:** Prevents couriers/senders from saving sensitive photos of package contents or IDs to their personal iCloud/Google Photos.
 
-## 2. Geofenced Anti-Hoarding System
-- Tracks GPS once "Start Journey" is tapped.
-- Automatically flags the system if a courier remains stationary at a residential address for >30 minutes with a package.
+## Feature 2: Anti-Hoarding Geofence
+- **Description:** If a courier accepts a package but does not leave a 200-meter radius of the pickup location within 15 minutes, an automated warning is fired.
+- **Why:** Prevents couriers from taking 10 packages and sitting in a coffee shop, destroying SLA times.
 
-## 3. Digital Chain of Custody
-- **Visual Evidence Module:** Forces the camera to take a photo of the transparent bag.
-- **Double QR System:** Generates cryptographic QR codes for the sender and recipient that must be scanned by the courier's device.
+## Feature 3: Dynamic Surge Pricing
+- **Description:** If a package is unaccepted, the platform slowly diverts its £1-£2 margin into the Courier Payout. 
+- **Why:** Ensures clearing of the marketplace without charging the Sender more money post-checkout.
 
-## 4. Biometric Authentication
-- **Liveness Detection:** Requires the courier to smile/blink into the camera at pickup to ensure they aren't using a photo of the registered account owner.
-
-## 5. Tiering & Rating Engine
-- Two-way rating system (1-5 stars).
-- Algorithmic tier progression (Standard -> Gold) based on successful delivery volume and zero dispute history.
-
-## 📝 TODO: Missing Features
-- [ ] Define the SOS Emergency Button workflow (does it call 999? Does it ping platform support?).
-- [ ] Define the dispute resolution interface.
+## 📝 Remaining Unknowns (TODOs)
+- **Push Notification Reliability:** Investigate how aggressive battery-saving modes on Chinese Android OEMs (Xiaomi, Huawei) will kill our background GPS tracking service.

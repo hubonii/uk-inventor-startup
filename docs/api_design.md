@@ -1,22 +1,24 @@
 # API Design
 
-## 🔌 Core Endpoints (REST)
+## Core REST Endpoints (v1)
 
-### Users
-- `POST /api/v1/users/register`
-- `POST /api/v1/users/verify-liveness` (Proxies to Onfido)
+### Intent & Matching
+- `POST /v1/intent` - Courier declares route (A to B). Returns a list of matched `package_ids`.
+- `POST /v1/packages` - Sender creates a delivery request.
+- `POST /v1/deliveries/accept` - Courier accepts a specific package from their matched list.
 
-### Trips (Intent)
-- `POST /api/v1/trips` - Courier logs their intent (start, end, mode of transport).
-- `GET /api/v1/trips/matches` - Returns packages matching the courier's active trip.
+### Handshake & Security
+- `GET /v1/deliveries/:id/totp` - Fetch the current time-based QR code seed.
+- `POST /v1/deliveries/:id/verify-pickup` - Courier submits Sender's scanned QR data.
+- `POST /v1/deliveries/:id/verify-dropoff` - Recipient submits Courier's scanned QR data.
 
-### Packages
-- `POST /api/v1/packages` - Sender creates a delivery request.
-- `PATCH /api/v1/packages/{id}/status` - Courier updates state (requires QR payload).
+### Identity
+- `POST /v1/auth/liveness` - Submit a real-time biometric Face Match payload to Onfido. Returns pass/fail boolean.
 
-## 📡 Real-Time (WebSockets)
-- `WSS /ws/tracking/{delivery_id}` - Broadcasts courier GPS coordinates to the sender and recipient.
+## WebSockets
+- `WS /v1/telemetry/:delivery_id`
+  - Client Emits: `{ lat, lng, timestamp }`
+  - Server Emits: `LOCATION_UPDATED` to Sender.
 
-## 📝 TODO: API Security
-- [ ] Implement rate limiting on the matching endpoint to prevent scraping of active packages.
-- [ ] Define the JWT expiration and refresh token strategy for mobile clients.
+## 📝 Remaining Unknowns (TODOs)
+- **Rate Limiting:** Define the strict rate limits for the `POST /v1/intent` endpoint to prevent scrapers from mapping out all local delivery demand.

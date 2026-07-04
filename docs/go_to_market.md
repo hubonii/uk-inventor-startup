@@ -1,20 +1,24 @@
 # Go-To-Market (GTM) Strategy
 
-## 🎯 The "Wedge" (Solving the Chicken & Egg)
-A city-wide launch in London will fail due to zero liquidity. We must launch in a hyper-dense, closed-loop network.
+## The Challenge: The Liquidity Trap
+Hyper-local marketplaces die if supply and demand don't intersect spatially and temporally. A sender in Brixton and a courier in Camden are useless to each other. We cannot launch "city-wide".
 
-### Phase 1: The University Campus
-- **Location:** UCL or Imperial College London.
-- **Why:** Thousands of students commuting daily along identical routes (Dorms -> Campus -> Central). High density, high trust, low package value (books, clothes).
-- **Tactic:** Subsidize the first 500 deliveries.
+## Phase 1: The Wedge (University Campuses)
+**Target:** UCL (University College London) and surrounding student dormitories.
+**Why:**
+- Massive density of 18-24 year olds.
+- High volume of Vinted/Depop transactions (second-hand clothes).
+- Highly predictable, high-volume commute patterns (from dorms to central campus).
+- High adoption rate for green/sustainable tech.
 
-### Phase 2: Local B2B to C
-- **Target:** Local pharmacies or boutique shops in Zone 1.
-- **Why:** They have guaranteed daily supply (packages going out). We can guarantee couriers that if they walk past the pharmacy at 5 PM, there will be 10 packages waiting to be taken to Zone 2.
+**Tactic:** 
+Subsidize the network. Offer free deliveries to the first 500 senders, and guarantee a £5 payout to student couriers. This primes the pump and creates the initial viral loop.
 
-### Phase 3: P2P City-Wide
-- Open the platform to general C2C deliveries (Vinted sellers, Facebook Marketplace) once the courier network hits a critical density.
+## Phase 2: B2B Local Retailers
+Once student density is established, we onboard independent local retailers (coffee roasters, vintage clothing stores) within the same geofence who need same-day delivery to local postcodes.
 
-## 📝 TODO: GTM
-- [ ] Draft a specific marketing budget for Phase 1.
-- [ ] Identify the top 3 universities to target for the beta launch.
+## Phase 3: Zone 1 & Zone 2 London Expansion
+Gradually open geofences contiguous to our active zones. 
+
+## 📝 Remaining Unknowns (TODOs)
+- **Campus Ambassadors:** Identify and recruit specific student society leaders at UCL to seed the initial supply side.

@@ -1,26 +1,23 @@
 # System Design
 
-## 🌐 Macro Architecture
+## 1. High-Level Components
+- **API Gateway:** Routes incoming HTTP/WebSocket traffic. Handles rate limiting and JWT auth.
+- **Matching Service:** Dedicated microservice for querying PostGIS. Scales independently.
+- **Telemetry Service:** Ingests GPS pings via WebSockets. Writes to a fast in-memory store (Redis) for live tracking, and batches writes to PostgreSQL for historical retention.
+- **Notification Service:** Handles push notifications (FCM/APNs) for status updates (e.g., "Package Picked Up").
 
-The system follows a microservices or modular monolith architecture.
+## 2. The Cryptographic Handshake Flow
+1. API generates a TOTP seed for the specific Delivery ID.
+2. Sender's app generates QR code based on seed + current time.
+3. Courier scans QR. Courier's app validates TOTP, generates the counter-signature.
+4. Courier's app sends the validation payload to the API.
+5. API updates state to `IN_TRANSIT` and fires Webhooks.
 
-### 1. Identity & Auth Service
-Handles user registration, JWT generation, and communicates with Onfido/Checkr APIs for background checks and Liveness verification.
+## 3. Offline Mode Architecture (Edge Case)
+If the exchange happens deep underground:
+- Apps exchange signed JWTs via Bluetooth Low Energy (BLE).
+- The JWT contains the timestamp, Delivery ID, and device signatures.
+- Once either device regains 4G/5G, the JWT is flushed to the API.
 
-### 2. Intent & Matching Engine
-The core brain. It ingests courier intent (start, destination, time) and uses geospatial queries (PostGIS) to find overlapping unassigned packages.
-
-### 3. State & Custody Manager
-A state machine that tracks the exact status of a package:
-`REQUESTED` -> `MATCHED` -> `INSPECTED` -> `PICKED_UP` -> `IN_TRANSIT` -> `DELIVERED` (or `DISPUTED`).
-
-### 4. Tracking & Geofence Service
-Ingests high-frequency GPS pings from the courier's mobile app via WebSockets. It calculates distance to destination, flags stagnation, and broadcasts the live location to the sender/recipient.
-
-## 📝 TODO: System Design
-- [ ] Diagram the sequence flow for the double QR-code handshake.
-- [ ] Define the fallback mechanism if a courier's phone dies mid-transit.
-
-## 🔗 Related Documents
-- [Technical Architecture](technical_architecture.md)
-- [Database Design](database_design.md)
+## 📝 Remaining Unknowns (TODOs)
+- **Concurrency:** Load test the PostGIS Matching Service against 10,000 simulated concurrent couriers requesting routes.

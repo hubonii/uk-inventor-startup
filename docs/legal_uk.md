@@ -1,26 +1,27 @@
-# Legal & Gig Economy (UK)
+# UK Legal & Regulatory Strategy
 
-## ⚖️ UK Gig Economy Worker Status
+## 1. Gig Economy & Employment Law
+**Core Challenge:** The Supreme Court ruling (*Uber BV v Aslam*) classified drivers as "workers", entitling them to minimum wage, holiday pay, and pensions. If our couriers are classified as workers, our unit economics (£3-£5 payout) collapse.
 
-In the UK, the *Uber BV v Aslam* Supreme Court ruling determined that Uber drivers are "workers" rather than "independent contractors," entitling them to minimum wage and holiday pay. 
+**Our Defense (The "Commuter-Share" Model):**
+- **No Dispatch/Assignment:** We do not algorithmically dispatch or assign packages. Users declare an intent to travel from Point A to Point B.
+- **No Penalties for Refusal:** Couriers are never penalized, down-ranked, or deactivated for ignoring or refusing a package.
+- **Inability to Make a Living:** Payouts are explicitly capped or designed as "expense contributions" for an existing journey, making it impossible to treat the platform as a full-time job.
+- **Platform Agnostic:** We are purely an "Information Society Service" connecting two parties.
 
-### Our Defense: The "Commuter-Share" Model
-To avoid this classification, we must position the platform closer to BlaBlaCar (ride-sharing to offset costs) rather than Deliveroo (a primary source of income).
+## 2. Criminal Liability & Contraband
+**Core Challenge:** Couriers unknowingly transporting illegal substances (drugs, weapons) could lead to platform shutdown and courier arrests.
 
-**Operational Rules to Enforce:**
-1. **No Algorithmic Penalties:** Couriers must never be penalized, downranked, or banned for refusing to accept a package or logging off.
-2. **No Route Dictation:** The platform only suggests packages based on the courier's *pre-determined* intent. We do not tell them where to go.
-3. **Primary Purpose:** Marketing must emphasize "offsetting commute costs" rather than "earning a living."
+**Our Defense (Digital Chain of Custody):**
+- **Sender Identification:** Strict KYC/AML (Know Your Customer) on all senders via Onfido/Checkr.
+- **Visual Inspection Policy:** Senders must photograph the items inside the transparent, tamper-evident bag.
+- **Double-Blind Acceptance:** The courier has the right to refuse any package if the contents do not match the visual manifest.
+- **ToS Indemnification:** Our Terms of Service explicitly shift all criminal and civil liability for the contents of the package to the sender.
 
-## 🚫 Liability of Contraband
+## 3. Insurance & Liability
+- **Micro-Insurance:** Every package requires micro-insurance to cover loss, damage, or theft.
+- **Coverage Caps:** Standard tier covers up to £50. Gold tier (requires higher identity verification) covers up to £500.
 
-If a courier is caught with drugs hidden inside a seemingly benign package (e.g., inside a stuffed toy), the legal defense relies on proving lack of intent (Mens Rea).
-
-**Our Platform Defense:**
-1. **Visual Evidence:** The app proves the courier inspected the item and it visually appeared safe.
-2. **Digital Chain of Custody:** The double QR code and tamper-evident bag prove the courier did not open or alter the package after receiving it.
-3. **Sender Liability:** The sender's verified ID (DBS/KYC) is immediately handed to law enforcement, proving they are the source.
-
-## 📝 TODO: Legal Actions
-- [ ] Draft a robust Terms of Service that explicitly defines the platform as an information-society service (a neutral facilitator).
-- [ ] Consult a UK Employment Barrister to review the intent-based matching UX to ensure it does not cross into "control" over the courier.
+## 📝 Remaining Unknowns (TODOs)
+- **Legal Counsel Review:** Require formal written opinion from a UK employment barrister confirming our UI/UX avoids the *Uber* classification test.
+- **Police Protocols:** Define the exact escalation path if a courier discovers illegal goods during transit.

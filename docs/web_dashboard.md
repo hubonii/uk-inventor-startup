@@ -1,15 +1,17 @@
-# Web Dashboard
+# B2B Web Dashboard
 
-## 🖥️ Purpose
-The web dashboard is designed for:
-1. **Internal Admin Operations:** Customer support, identity verification overrides, dispute resolution, and map overview of active packages.
-2. **B2B Senders (Retailers/Pharmacies):** Local businesses that want to bulk-upload delivery requests via CSV or API, and print sender QR codes in bulk.
+## 1. Target Audience
+Local SME retailers (Coffee roasters, vintage shops, local bakeries) who need to dispatch 5-50 items per day.
 
-## 🛠️ Key Features
-- **God-Mode Map:** A live view of all packages in transit for support teams to monitor the geofencing anti-hoarding alerts.
-- **Dispute Resolution Center:** Access to the encrypted visual evidence (tamper-evident bag photos) to resolve sender vs courier claims.
-- **Business Bulk-Upload:** Allowing local shops to request 20 intent-based couriers simultaneously.
+## 2. Core Features (Phase 2)
+- **Bulk CSV Upload:** Upload a spreadsheet of names, phone numbers, and postcodes. The system geocodes them and creates 50 draft packages.
+- **API Access:** Webhook and REST API access so they can integrate directly into their Shopify stores (e.g., when an order is placed, generate a delivery intent).
+- **Consolidated Billing:** Instead of paying £5 individually via Apple Pay per package, the retailer is invoiced monthly via Stripe Billing.
 
-## 📝 TODO: Web Dashboard
-- [ ] Decide on the framework (Next.js vs Vite/React).
-- [ ] Map out the RBAC (Role-Based Access Control) for customer support agents so they cannot export user PII.
+## 3. Technology Stack
+- **Frontend:** Next.js (React) hosted on Vercel.
+- **Styling:** Tailwind CSS with shadcn/ui components.
+- **Auth:** NextAuth.js linking to the core PostgreSQL user database.
+
+## 📝 Remaining Unknowns (TODOs)
+- **Shopify App Store:** Determine the technical requirements and review process for building an official Shopify Plugin for our service.

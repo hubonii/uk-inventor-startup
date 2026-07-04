@@ -1,19 +1,16 @@
-# Critical Unknowns & Questions
+# Open Questions & Action Items
 
-This document tracks the most pressing questions that lack data or require founder decisions.
+## Legal & Compliance
+- **Employment Law:** Who is our external legal counsel to draft the "Commuter-Share" defense memo?
+- **Police Escalarion:** What is the specific phone number or protocol to give couriers if they suspect a package contains a bomb or narcotics?
+- **Insurance:** Which underwriter will cover peer-to-peer transit without demanding a £500 minimum premium?
 
-## ⚖️ Legal & Compliance
-1. **Employment Classification:** Does our specific matching UI (where couriers pick from a list based on their intent) definitively protect us from the *Uber BV v Aslam* ruling?
-2. **Contraband Liability:** If a courier is arrested carrying drugs hidden in a platform package, what is the exact legal protocol to insulate the platform and the courier?
-3. **Biometric Data Retention:** How long are we legally allowed to store the Onfido facial liveness scans under UK GDPR before purging?
+## Technical & Product
+- **PostGIS Load:** Can our planned database architecture actually handle 10,000 couriers pinging GPS coordinates every 10 seconds without locking the table?
+- **Offline Handshake:** Is Bluetooth Low Energy (BLE) reliable enough across fragmented cheap Android devices to ensure the cryptographic exchange doesn't fail in the Underground?
+- **App Store Rejection:** How do we guarantee Apple won't reject our app for requiring constant background location tracking?
 
-## 💸 Financial & Market
-1. **Willingness to Pay:** Will C2C sellers pay £5 for a same-day flexible delivery, or do they prefer Evri for £3.20 even if it takes 3 days?
-2. **Courier Minimum Threshold:** What is the absolute minimum payout a commuter will accept to undergo the hassle of visual inspection and taking photos? Is £3 enough, or must it be £5+?
-
-## 💻 Technical
-1. **Underground Connectivity:** The London Underground has massive dead zones. How does the double QR code handshake work if the recipient meets the courier at a tube station with no 4G/5G signal?
-2. **GPS Spoofing:** How easily can a malicious courier spoof their GPS location to bypass the anti-hoarding geofence?
-
-## 📝 TODO: Action Items
-- [ ] Update the [Research Roadmap](../research/roadmap.md) to assign these questions to specific agents.
+## Business & Operations
+- **The Wedge:** Which specific student societies at UCL should we sponsor to get our first 500 couriers?
+- **Stripe Margins:** How do we negotiate lower flat fees with Stripe to prevent our £1.00 margin from being entirely consumed by transaction fees?
+- **Bag Supply Chain:** Where are we sourcing 100,000 serialized, tamper-evident plastic bags, and how much do they cost per unit?

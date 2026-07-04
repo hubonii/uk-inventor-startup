@@ -1,25 +1,17 @@
 # Market Analysis
 
-## 🏙️ Target Market
-The initial target market is high-density urban environments in the UK (e.g., London, Manchester). High density is required for the "intent-based" routing algorithm to find sufficient matches between commuter routes and package destinations.
+## 1. Total Addressable Market (TAM)
+- **Global Last-Mile Delivery Market:** Projected to reach $200B+ by 2030.
+- **UK Market:** The UK is the most developed e-commerce market in Europe. Over 4 billion parcels are delivered annually in the UK.
 
-## 📈 Market Drivers
-- **Sustainability Mandates:** UK cities are increasingly introducing Ultra Low Emission Zones (ULEZ) and penalizing high-polluting delivery vans.
-- **Cost of Living:** Commuters are looking for passive ways to monetize their daily habits to offset transit costs.
-- **E-commerce Volume:** The continuous growth of local e-commerce and C2C marketplaces (like Vinted or Depop) creates a massive demand for cheap, same-day local delivery.
+## 2. Serviceable Addressable Market (SAM)
+- **London Same-Day / Hyper-local Delivery:** London handles roughly 1.5 million parcels per day. The demand for same-day delivery is growing at 20% YoY, driven by expectations set by Amazon Prime.
 
-## ⚠️ The Liquidity Challenge (Chicken & Egg)
-The most significant market risk is marketplace liquidity. 
-- A sender will not use the app if there are no commuters heading to their destination.
-- A commuter will not use the app if there are no packages on their route.
+## 3. Serviceable Obtainable Market (SOM)
+- **Peer-to-Peer / C2C / SME Niche:** Targeting the specific slice of Vinted, Depop, eBay sellers, and local independent shops in London who cannot afford £10-£15 same-day courier rates. Estimated at 50,000 deliveries per day.
 
-**Strategy to overcome:** Hyper-local launches (e.g., specific university campuses or business parks) before expanding city-wide.
+## 4. Market Tailwinds
+- **Environmental ESG Mandates:** The Mayor of London is aggressively expanding ULEZ (Ultra Low Emission Zones). Traditional delivery vans are becoming prohibitively expensive to operate. Our "zero net new emissions" model (utilizing existing Tube journeys) aligns perfectly with government grants and consumer sentiment.
 
-## 📝 TODO: Missing Research
-- [ ] Calculate Total Addressable Market (TAM) for same-day urban delivery in London.
-- [ ] Research the volume of daily commuter trips in target zones.
-- [ ] Define the specific niche (e.g., local retail, C2C) that will form our early adopter wedge.
-
-## 🔗 Related Documents
-- [Competitors](competitors.md)
-- [Go-To-Market](go_to_market.md)
+## 📝 Remaining Unknowns (TODOs)
+- **Regulatory Subsidies:** Research specific Transport for London (TfL) or Innovate UK grants available for carbon-neutral logistics startups.

@@ -1,30 +1,26 @@
 # Unit Economics
 
-## 🧮 Theoretical Transaction
-*(These numbers are placeholders and must be validated)*
-
+## 1. Single Transaction Breakdown (Base Tier)
 - **Sender Pays:** £5.00
-- **Courier Receives:** £4.00
-- **Platform Take:** £1.00 (20%)
+- **Courier Receives:** £3.50
+- **Platform Gross Margin:** £1.50
 
-### 📉 Variable Costs per Transaction
-- **Payment Processing (Stripe):** ~£0.20
-- **Micro-Insurance Premium:** ~£0.15
-- **Biometric/API Verification Cost (Amortized):** ~£0.05
-- **Net Margin per delivery:** £0.60
+## 2. Variable Costs per Transaction
+- **Payment Processing (Stripe):** ~£0.27 (1.4% + 20p)
+- **Identity Check (Amortized Onfido):** ~£0.10 (Assuming 1 Liveness check per 5 deliveries, at £0.50 per API call).
+- **SMS / Twilio Routing:** ~£0.05
+- **Platform Net Margin:** **£1.08 per delivery**
 
-## 🎒 Batching Economics
-To make the platform highly lucrative for the courier without raising prices for the sender, batching is essential.
-- If a courier takes 3 packages heading to the same office block:
-  - Time added to commute: +10 mins
-  - Earnings: £12.00
-  - *This transforms a low-yield task into a highly attractive micro-job.*
+## 3. The Power of Batching
+The £3.50 payout is not a livable wage for a 45-minute trip. However, because couriers are taking a fixed route (e.g., the Central Line), they can *batch*.
+- If a courier accepts 3 packages along the same Tube line, their payout is £10.50.
+- The platform's net margin becomes £3.24 for that single commuter trip.
+- This creates the density flywheel: higher density = more batching = happier couriers = faster delivery times.
 
-## 📝 TODO: Critical Unknowns
-- [ ] Build a complete financial model spreadsheet.
-- [ ] Determine the exact API costs for Onfido/Checkr per user onboarding and facial liveness checks.
-- [ ] Determine the cost of the physical transparent tamper-evident bags and who pays for them.
+## 4. Customer Acquisition Cost (CAC)
+- Goal CAC for Senders (Vinted power-users): < £5.00
+- Goal CAC for Couriers (University Students): < £10.00
+- **LTV/CAC Ratio Target:** 3:1 within 12 months.
 
-## 🔗 Related Documents
-- [Business Model](business_model.md)
-- [Pricing](pricing.md)
+## 📝 Remaining Unknowns (TODOs)
+- **Insurance Loss Ratio:** We lack actuarial data to determine how much of our Net Margin will be eaten by legitimate "lost package" claims.

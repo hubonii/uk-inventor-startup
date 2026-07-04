@@ -1,15 +1,16 @@
-# Mobile App
+# Mobile Application Architecture
 
-## 📱 Tech Stack
-- **Framework:** React Native or Flutter.
-- **Maps Integration:** Mapbox SDK (better custom styling for routes than Google Maps).
-- **Camera Module:** Custom native bridge required to ensure photos are NOT saved to the local camera roll (GDPR compliance).
+## 1. Technology Stack
+- **Framework:** React Native (Expo Managed Workflow).
+- **State Management:** Zustand (lightweight, avoids Redux boilerplate).
+- **Navigation:** React Navigation v6.
+- **Maps UI:** React Native Maps (using Apple Maps on iOS, Google Maps on Android).
 
-## 🔑 Key Mobile Challenges
-1. **Background Location:** iOS and Android strictly limit background location tracking. The app must request "Always On" permission and display a persistent notification while a delivery is active.
-2. **Battery Drain:** High-frequency GPS pings drain batteries fast. We need an adaptive ping rate (e.g., ping every 10 seconds when walking, every 30 seconds when driving fast).
-3. **Offline Mode:** If a courier loses signal in the London Underground, the app must cache GPS points and the delivery state, syncing them once back above ground.
+## 2. Core Modules
+- **Location Tracker:** A background service that hooks into OS-level location APIs. Must gracefully handle iOS's aggressive background task termination.
+- **QR Scanner/Generator:** Uses `expo-camera` to scan. Uses `react-native-qrcode-svg` to generate dynamic TOTP codes.
+- **Biometric API:** Bridges to the Onfido mobile SDK for the Face Match flow.
+- **Camera Sandbox:** A custom UI built over `expo-camera` that intercepts the base64 image data and sends it directly to the API, bypassing the camera roll.
 
-## 📝 TODO: Mobile UX
-- [ ] Design the "Intent Entry" screen to be frictionless (< 3 taps).
-- [ ] Prototype the QR scanning UI for the digital handshake.
+## 📝 Remaining Unknowns (TODOs)
+- **Background Location:** Getting approval from the Google Play Store for background location access is notoriously difficult. Need to draft the justification video for the reviewers.

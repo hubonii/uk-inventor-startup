@@ -1,16 +1,36 @@
 # Database Design
 
-## 🗄️ Relational Model (PostgreSQL)
+## Core PostgreSQL Schema
 
-### Core Tables
-1. **Users:** `id`, `role` (sender, courier), `tier` (standard, gold), `dbs_cleared_at`, `kyc_status`.
-2. **Packages:** `id`, `sender_id`, `recipient_name`, `size`, `declared_value`, `status`.
-3. **Trips (Intent):** `id`, `courier_id`, `start_geom` (PostGIS), `end_geom` (PostGIS), `planned_time`.
-4. **Deliveries:** Mapping table linking `Packages` to `Trips`, including `pickup_time`, `dropoff_time`, and `payout_amount`.
+### 1. `users` Table
+- `id` (UUID, PK)
+- `role` (Enum: SENDER, COURIER, BOTH)
+- `kyc_status` (Enum: PENDING, VERIFIED, FAILED)
+- `stripe_account_id` (String)
 
-## 📦 Blob Storage (S3 / GCS)
-- **Bucket 1 (Identity):** Strictly access-controlled bucket for ID scans.
-- **Bucket 2 (Custody):** Stores the encrypted photos of the package contents taken by the courier through the transparent bag. Lifecycle rule: Delete after 30 days.
+### 2. `packages` Table
+- `id` (UUID, PK)
+- `sender_id` (UUID, FK)
+- `status` (Enum: DRAFT, SEEKING_COURIER, IN_TRANSIT, DELIVERED, DISPUTED)
+- `origin` (Geography Point) - Indexed with GiST
+- `destination` (Geography Point) - Indexed with GiST
+- `manifest_photo_url` (String, Encrypted)
+- `tier` (Enum: STANDARD, GOLD)
 
-## 📝 TODO: Database Optimization
-- [ ] Design the PostGIS indexing strategy for rapid matching of overlapping commuter routes.
+### 3. `courier_intents` Table
+- `id` (UUID, PK)
+- `courier_id` (UUID, FK)
+- `start_location` (Geography Point)
+- `end_location` (Geography Point)
+- `expires_at` (Timestamp)
+
+### 4. `deliveries` (The Join/Transaction Table)
+- `id` (UUID, PK)
+- `package_id` (UUID, FK)
+- `courier_id` (UUID, FK)
+- `pickup_time` (Timestamp)
+- `dropoff_time` (Timestamp)
+- `payout_amount` (Decimal)
+
+## 📝 Remaining Unknowns (TODOs)
+- **PostGIS Indexing:** Finalize the exact bounding box (ST_DWithin) query structure to optimize index usage for the matching engine.
