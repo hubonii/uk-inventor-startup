@@ -1,36 +1,37 @@
-# PROJECT HEALTH & RISK REPORT
+# PROJECT HEALTH REPORT
+**Last Updated:** July 2026
+**Status:** Post-Pivot Reconstruction
 
-**Status:** ALL PHASES RESEARCHED & INTEGRATED
-**Last Audited:** 2026-07-04
-**Data Quality:** Evidence-Backed (Real-world Citations Integrated)
+## Executive Summary
+The startup repository has undergone a radical restructuring following a critical rejection by the Investment Committee. The core architecture has successfully pivoted from a flawed C2C commuter model to a highly defensible B2B Local Independent model with a True Marketplace framework.
 
-## 📊 Documentation Completeness (100%)
+## Document Audits
 
-The repository has transitioned from an outline to a fully researched operating system. All "Unknowns" from the initial planning phase have been replaced with concrete, empirical constraints.
+### 1. Business Model (`docs/business_model.md`)
+- **Status:** **HEALTHY**
+- **Changes:** Pivot to B2B High-Street delivery. Implemented "Anchor Couriers" to solve the cold-start problem. Introduced "True Marketplace" variable pricing.
 
-## 🔴 High-Risk Blockers (Discovered & Documented)
-The external research exposed three critical threats to the platform's viability that are now permanently documented:
+### 2. Unit Economics (`docs/unit_economics.md`)
+- **Status:** **HEALTHY**
+- **Changes:** Stripe fixed 20p fees neutralized via Aggregated Weekly Billing. Onfido API costs minimized by restricting KYC to onboarding only. 
 
-1. **The Stripe Micro-Transaction Margin Threat**
-   - **Data:** Stripe UK charges 1.5% + £0.20 per transaction.
-   - **Impact:** On a £5 payment, the fixed 20p fee destroys 20% of the £1 net margin.
-   - **Mitigation:** We must secure volume-based micro-transaction pricing via Stripe Connect Sales.
+### 3. Legal & Visa Strategy (`docs/legal_uk.md`, `docs/visa_strategy.md`)
+- **Status:** **HEALTHY**
+- **Changes:** The *Uber v Aslam* misclassification risk has been neutralized. By allowing couriers to set their own minimum rates, the platform acts strictly as a SaaS intermediary. The tech moat for the Innovator Visa remains PostGIS routing.
 
-2. **The Vinted "Integrated Label" Blocker**
-   - **Data:** Vinted explicitly ties seller payment release to real-time Evri/InPost tracking APIs.
-   - **Impact:** Vinted sellers *cannot* manually use our app without risking their payouts.
-   - **Mitigation:** We must pivot the initial GTM strategy away from Vinted and towards independent D2C Shopify brands and local C2C community groups (Facebook Marketplace/Gumtree).
+### 4. Security & Chain of Custody (`docs/security.md`)
+- **Status:** **HEALTHY**
+- **Changes:** Offline BLE mesh network scrapped for engineering pragmatism. All handshakes now occur above ground via standard TOTP QR APIs. "Collateralized Staking" (£50 hold) implemented to deter theft without requiring micro-insurance.
 
-3. **Platform Leakage / Disintermediation**
-   - **Data:** TaskRabbit's post-mortem proved that if users find a reliable gig-worker, they bypass the app to save fees.
-   - **Impact:** Loss of Customer Lifetime Value (LTV).
-   - **Mitigation:** The platform's intrinsic value must remain high (e.g., providing the necessary micro-insurance and automated B2B dispatch).
+### 5. Go-To-Market (`docs/go_to_market.md`)
+- **Status:** **HEALTHY**
+- **Changes:** D2C Shopify brands abandoned. Pivot to local pharmacies, independent hardware stores, and print shops within a 1-mile geofenced "University Wedge" (UCL/Bloomsbury).
 
-## ✅ Validated Assumptions
-- **Legal Safe Harbor:** Confirmed that an intent-based matching engine without algorithms penalizing couriers neutralizes the *Uber v Aslam* "control" test.
-- **Biometric GDPR:** Confirmed that while Onfido is robust (iBeta Level 2 PAD), processing this Special Category Data requires a mandatory DPIA and explicit consent.
-- **UCL Density:** Confirmed that 25% of UCL students are commuters, providing the mathematical density required for the initial "University Wedge" launch.
+### 6. Competitor Landscape (`docs/competitors.md`)
+- **Status:** **HEALTHY**
+- **Changes:** 150 competitor entities processed. Deep-dive into 50 direct crowdsourced logistics platforms and 100 indirect (food delivery, traditional, autonomous) networks, highlighting historical failure and success modes.
 
-## 🔎 Remaining Unknowns (The Final TODOs)
-- **TODO [INSURANCE]:** Obtain a binding term sheet from an underwriter willing to insure packages for 50p per trip.
-- **TODO [OPERATIONS]:** Procure physical samples of tamper-evident bags and test their durability on the London Underground.
+## Next Steps / Remaining Risks
+- **Technical Prototyping:** Begin scaffolding the PostGIS database and the React Native frontend using the new True Marketplace logic.
+- **Sales Strategy:** Draft B2B pitch materials specifically tailored for independent pharmacies to secure the first 15 local anchor clients.
+- **Regulatory Check:** Ensure the Stripe pre-authorization hold for the £50 security deposit complies with basic FCA consumer protection rules without triggering e-money licensing requirements.
